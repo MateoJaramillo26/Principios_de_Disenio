@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <style>
+        /* Apply border to the table */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        /* Apply border to table cells */
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        /* Apply background color to alternate rows */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th># </th>
+        <th>Nombre</th>
+        <th>Altura (ft)</th>
+        <th>Peso (Kg)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="obj : ${pokemonList}">
+        <td th:text="${obj.getNational_number()}"></td>
+        <td th:text="${obj.getName()}"></td>
+        <td th:text="${obj.getHeight()}"></td>
+        <td th:text="${obj.getWeight()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
